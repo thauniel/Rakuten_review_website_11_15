@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { ThumbsUp, ThumbsDown, Underline } from "lucide-react"
+import { ThumbsUp, ThumbsDown} from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ScrollArea } from '@/components/ui/scroll-area'
-import Image from "next/image"
+// import Image from "next/image"
 import oto_p_review from './oto_ear_sort_with_refe_p.json'
 import oto_n_review from './oto_ear_sort_with_refe_n.json'
 import onnshitsu_p_review from './onnshitsu_ear_sort_with_refe_p.json'
@@ -58,7 +58,7 @@ import less_review_p_nedann_humidifier from './10016923_nedann_ear_sort_with_ref
 import less_review_n_nedann_humidifier from './10016923_nedann_ear_sort_with_refe_n.json'
 import less_review_p_teire_humidifier from './10016923_teire_ear_sort_with_refe_p.json'
 import less_review_n_teire_humidifier from './10016923_teire_ear_sort_with_refe_n.json'
-import Modal from "react-modal"
+// import Modal from "react-modal"
 
 
 const categories = ["イヤホン","加湿器"] as const;
@@ -90,14 +90,14 @@ const reviews = {
   }
 }
 
-const images ={
-  "QCY-T1C完全ワイヤレスイヤホン第3/4世代": 
-  [
-   require("./product_image/rakuten_earphone_1.jpg"),
-   require("./product_image/rakuten_earphone_2.jpg"),
-   require("./product_image/rakuten_earphone_3.jpg"),
-  ],
-};
+// const images ={
+//   "QCY-T1C完全ワイヤレスイヤホン第3/4世代": 
+//   [
+//    require("./product_image/rakuten_earphone_1.jpg"),
+//    require("./product_image/rakuten_earphone_2.jpg"),
+//    require("./product_image/rakuten_earphone_3.jpg"),
+//   ],
+// };
 
 export function ProductReviewsComponent() {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
@@ -111,8 +111,8 @@ export function ProductReviewsComponent() {
   const [ClickReceive,setClickReceive]=useState(false);
   const [PReviews,setPositiveReviews]=useState<string[]>([]);
   const [NReviews,setNegativeReviews]=useState<string[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [selectedImage, setSelectedImage] = useState('');
 
   const [expandedIndices, setExpandedIndices] = useState<Record<string, Record<number, boolean>>>({});
   const [expandedRightIndices, setRightExpandedIndices] = useState<Record<string, Record<number, boolean>>>({});
@@ -152,15 +152,15 @@ export function ProductReviewsComponent() {
   };
 
 
-  const openModal = (image:string) => {
-    setSelectedImage(image);
-    setIsOpen(true);
-  };
+  // const openModal = (image:string) => {
+  //   setSelectedImage(image);
+  //   setIsOpen(true);
+  // };
 
-  const closeModal = () => {
-    setIsOpen(false);
-    setSelectedImage('');
-  };
+  // const closeModal = () => {
+  //   setIsOpen(false);
+  //   setSelectedImage('');
+  // };
 
   const handleProductChange = (value: string) => {
     setSelectedProduct(value);
@@ -270,8 +270,8 @@ export function ProductReviewsComponent() {
         </div>
         
 
-    <div>
-        <div className='flex justify-center items-center mb-4'>
+    <div> 
+        {/* <div className='flex justify-center items-center mb-4'>
             {selectedProduct === "QCY-T1C完全ワイヤレスイヤホン第3/4世代" && images[selectedProduct]?.map((image, index) => (
             <Image 
             key={index} 
@@ -281,14 +281,14 @@ export function ProductReviewsComponent() {
             onClick={()=>openModal(image)}/>
             
           ))}
-       </div>
+       </div> */}
 
-       <Modal isOpen={isOpen} onRequestClose={closeModal} className="modal">
+       {/* <Modal isOpen={isOpen} onRequestClose={closeModal} className="modal">
         <Image src={selectedImage} alt="Selected Product" className="max-w-[50%] max-h-[50%]" style={{width:'50%',height:'50%'}}/>
         <button onClick={closeModal} className='absolute top-4 right-4 text-white bg-gray-800 rounded p-2'>
           Close
         </button>
-      </Modal>
+      </Modal> */}
     </div>
 
      
